@@ -32,6 +32,7 @@ public class LoginPage extends BasePage{
 
 
     public void login() {
+        signInButton.click();
         userNameInputBox.sendKeys(ConfigurationReader.get("username"));
         passwordInputBox.sendKeys(ConfigurationReader.get("password"));
         LoginPageSignInButton.click();
