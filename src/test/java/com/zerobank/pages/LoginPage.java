@@ -41,5 +41,17 @@ public class LoginPage extends BasePage{
             proceedLinkButton.click();
         }
 
-   
-}}
+    }
+    public void login(String userName, String password) {
+        signInButton.click();
+        userNameInputBox.sendKeys(userName);
+        passwordInputBox.sendKeys(password);
+        LoginPageSignInButton.click();
+        if (Driver.get().findElements(By.cssSelector("[id='details-button']")).size()==1){
+            advancedButton.click();
+            proceedLinkButton.click();
+        }
+
+    }
+
+}

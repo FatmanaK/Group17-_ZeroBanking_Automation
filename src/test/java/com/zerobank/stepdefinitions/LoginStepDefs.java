@@ -32,14 +32,15 @@ public class LoginStepDefs {
 
     @When("the user enters {string} {string} username and {string} {string} password")
     public void the_user_enters_username_and_password(String string, String string2, String string3, String string4) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        new LoginPage().login(string2,string4);
+
     }
 
     @Then("The error message {string} should be displayed.")
     public void the_error_message_should_be_displayed(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        Assert.assertEquals("Login and/or password are wrong.", new LoginPage().alertError.getText());
     }
 
 }
